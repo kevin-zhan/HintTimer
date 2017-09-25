@@ -1,0 +1,548 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F44292821F78DFA6000784EA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F44292811F78DFA6000784EA /* AppDelegate.m */; };
+		F44292851F78DFA6000784EA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F44292841F78DFA6000784EA /* ViewController.m */; };
+		F44292871F78DFA6000784EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F44292861F78DFA6000784EA /* Assets.xcassets */; };
+		F442928A1F78DFA6000784EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F44292881F78DFA6000784EA /* Main.storyboard */; };
+		F442928D1F78DFA6000784EA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F442928C1F78DFA6000784EA /* main.m */; };
+		F44292981F78DFA6000784EA /* KZHintTimerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F44292971F78DFA6000784EA /* KZHintTimerTests.m */; };
+		F44292A31F78DFA6000784EA /* KZHintTimerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F44292A21F78DFA6000784EA /* KZHintTimerUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F44292941F78DFA6000784EA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F44292751F78DFA6000784EA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F442927C1F78DFA6000784EA;
+			remoteInfo = KZHintTimer;
+		};
+		F442929F1F78DFA6000784EA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F44292751F78DFA6000784EA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F442927C1F78DFA6000784EA;
+			remoteInfo = KZHintTimer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F442927D1F78DFA6000784EA /* KZHintTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KZHintTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F44292801F78DFA6000784EA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F44292811F78DFA6000784EA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F44292831F78DFA6000784EA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		F44292841F78DFA6000784EA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F44292861F78DFA6000784EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F44292891F78DFA6000784EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F442928B1F78DFA6000784EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F442928C1F78DFA6000784EA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F442928E1F78DFA6000784EA /* KZHintTimer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KZHintTimer.entitlements; sourceTree = "<group>"; };
+		F44292931F78DFA6000784EA /* KZHintTimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KZHintTimerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F44292971F78DFA6000784EA /* KZHintTimerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KZHintTimerTests.m; sourceTree = "<group>"; };
+		F44292991F78DFA6000784EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F442929E1F78DFA6000784EA /* KZHintTimerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KZHintTimerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F44292A21F78DFA6000784EA /* KZHintTimerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KZHintTimerUITests.m; sourceTree = "<group>"; };
+		F44292A41F78DFA6000784EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F442927A1F78DFA6000784EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F44292901F78DFA6000784EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F442929B1F78DFA6000784EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F44292741F78DFA6000784EA = {
+			isa = PBXGroup;
+			children = (
+				F442927F1F78DFA6000784EA /* KZHintTimer */,
+				F44292961F78DFA6000784EA /* KZHintTimerTests */,
+				F44292A11F78DFA6000784EA /* KZHintTimerUITests */,
+				F442927E1F78DFA6000784EA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F442927E1F78DFA6000784EA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F442927D1F78DFA6000784EA /* KZHintTimer.app */,
+				F44292931F78DFA6000784EA /* KZHintTimerTests.xctest */,
+				F442929E1F78DFA6000784EA /* KZHintTimerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F442927F1F78DFA6000784EA /* KZHintTimer */ = {
+			isa = PBXGroup;
+			children = (
+				F44292801F78DFA6000784EA /* AppDelegate.h */,
+				F44292811F78DFA6000784EA /* AppDelegate.m */,
+				F44292831F78DFA6000784EA /* ViewController.h */,
+				F44292841F78DFA6000784EA /* ViewController.m */,
+				F44292861F78DFA6000784EA /* Assets.xcassets */,
+				F44292881F78DFA6000784EA /* Main.storyboard */,
+				F442928B1F78DFA6000784EA /* Info.plist */,
+				F442928C1F78DFA6000784EA /* main.m */,
+				F442928E1F78DFA6000784EA /* KZHintTimer.entitlements */,
+			);
+			path = KZHintTimer;
+			sourceTree = "<group>";
+		};
+		F44292961F78DFA6000784EA /* KZHintTimerTests */ = {
+			isa = PBXGroup;
+			children = (
+				F44292971F78DFA6000784EA /* KZHintTimerTests.m */,
+				F44292991F78DFA6000784EA /* Info.plist */,
+			);
+			path = KZHintTimerTests;
+			sourceTree = "<group>";
+		};
+		F44292A11F78DFA6000784EA /* KZHintTimerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F44292A21F78DFA6000784EA /* KZHintTimerUITests.m */,
+				F44292A41F78DFA6000784EA /* Info.plist */,
+			);
+			path = KZHintTimerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F442927C1F78DFA6000784EA /* KZHintTimer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F44292A71F78DFA6000784EA /* Build configuration list for PBXNativeTarget "KZHintTimer" */;
+			buildPhases = (
+				F44292791F78DFA6000784EA /* Sources */,
+				F442927A1F78DFA6000784EA /* Frameworks */,
+				F442927B1F78DFA6000784EA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KZHintTimer;
+			productName = KZHintTimer;
+			productReference = F442927D1F78DFA6000784EA /* KZHintTimer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F44292921F78DFA6000784EA /* KZHintTimerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F44292AA1F78DFA6000784EA /* Build configuration list for PBXNativeTarget "KZHintTimerTests" */;
+			buildPhases = (
+				F442928F1F78DFA6000784EA /* Sources */,
+				F44292901F78DFA6000784EA /* Frameworks */,
+				F44292911F78DFA6000784EA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F44292951F78DFA6000784EA /* PBXTargetDependency */,
+			);
+			name = KZHintTimerTests;
+			productName = KZHintTimerTests;
+			productReference = F44292931F78DFA6000784EA /* KZHintTimerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F442929D1F78DFA6000784EA /* KZHintTimerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F44292AD1F78DFA6000784EA /* Build configuration list for PBXNativeTarget "KZHintTimerUITests" */;
+			buildPhases = (
+				F442929A1F78DFA6000784EA /* Sources */,
+				F442929B1F78DFA6000784EA /* Frameworks */,
+				F442929C1F78DFA6000784EA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F44292A01F78DFA6000784EA /* PBXTargetDependency */,
+			);
+			name = KZHintTimerUITests;
+			productName = KZHintTimerUITests;
+			productReference = F442929E1F78DFA6000784EA /* KZHintTimerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F44292751F78DFA6000784EA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "kevinzhan(湛杨梦晓)";
+				TargetAttributes = {
+					F442927C1F78DFA6000784EA = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+					F44292921F78DFA6000784EA = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F442927C1F78DFA6000784EA;
+					};
+					F442929D1F78DFA6000784EA = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F442927C1F78DFA6000784EA;
+					};
+				};
+			};
+			buildConfigurationList = F44292781F78DFA6000784EA /* Build configuration list for PBXProject "KZHintTimer" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F44292741F78DFA6000784EA;
+			productRefGroup = F442927E1F78DFA6000784EA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F442927C1F78DFA6000784EA /* KZHintTimer */,
+				F44292921F78DFA6000784EA /* KZHintTimerTests */,
+				F442929D1F78DFA6000784EA /* KZHintTimerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F442927B1F78DFA6000784EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F44292871F78DFA6000784EA /* Assets.xcassets in Resources */,
+				F442928A1F78DFA6000784EA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F44292911F78DFA6000784EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F442929C1F78DFA6000784EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F44292791F78DFA6000784EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F44292851F78DFA6000784EA /* ViewController.m in Sources */,
+				F442928D1F78DFA6000784EA /* main.m in Sources */,
+				F44292821F78DFA6000784EA /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F442928F1F78DFA6000784EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F44292981F78DFA6000784EA /* KZHintTimerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F442929A1F78DFA6000784EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F44292A31F78DFA6000784EA /* KZHintTimerUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F44292951F78DFA6000784EA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F442927C1F78DFA6000784EA /* KZHintTimer */;
+			targetProxy = F44292941F78DFA6000784EA /* PBXContainerItemProxy */;
+		};
+		F44292A01F78DFA6000784EA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F442927C1F78DFA6000784EA /* KZHintTimer */;
+			targetProxy = F442929F1F78DFA6000784EA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F44292881F78DFA6000784EA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F44292891F78DFA6000784EA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F44292A51F78DFA6000784EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		F44292A61F78DFA6000784EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		F44292A81F78DFA6000784EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = KZHintTimer/KZHintTimer.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = Z3T74M8F47;
+				INFOPLIST_FILE = KZHintTimer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tech.zymx.KZHintTimer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F44292A91F78DFA6000784EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = KZHintTimer/KZHintTimer.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = Z3T74M8F47;
+				INFOPLIST_FILE = KZHintTimer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tech.zymx.KZHintTimer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		F44292AB1F78DFA6000784EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = Z3T74M8F47;
+				INFOPLIST_FILE = KZHintTimerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tech.zymx.KZHintTimerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KZHintTimer.app/Contents/MacOS/KZHintTimer";
+			};
+			name = Debug;
+		};
+		F44292AC1F78DFA6000784EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = Z3T74M8F47;
+				INFOPLIST_FILE = KZHintTimerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tech.zymx.KZHintTimerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KZHintTimer.app/Contents/MacOS/KZHintTimer";
+			};
+			name = Release;
+		};
+		F44292AE1F78DFA6000784EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = Z3T74M8F47;
+				INFOPLIST_FILE = KZHintTimerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tech.zymx.KZHintTimerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = KZHintTimer;
+			};
+			name = Debug;
+		};
+		F44292AF1F78DFA6000784EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = Z3T74M8F47;
+				INFOPLIST_FILE = KZHintTimerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tech.zymx.KZHintTimerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = KZHintTimer;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F44292781F78DFA6000784EA /* Build configuration list for PBXProject "KZHintTimer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F44292A51F78DFA6000784EA /* Debug */,
+				F44292A61F78DFA6000784EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F44292A71F78DFA6000784EA /* Build configuration list for PBXNativeTarget "KZHintTimer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F44292A81F78DFA6000784EA /* Debug */,
+				F44292A91F78DFA6000784EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F44292AA1F78DFA6000784EA /* Build configuration list for PBXNativeTarget "KZHintTimerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F44292AB1F78DFA6000784EA /* Debug */,
+				F44292AC1F78DFA6000784EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F44292AD1F78DFA6000784EA /* Build configuration list for PBXNativeTarget "KZHintTimerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F44292AE1F78DFA6000784EA /* Debug */,
+				F44292AF1F78DFA6000784EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F44292751F78DFA6000784EA /* Project object */;
+}
