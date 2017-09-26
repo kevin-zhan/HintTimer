@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  KZTimerPopoverViewController.h
 //  KZHintTimer
 //
 //  Created by kevinzhan(湛杨梦晓) on 25/09/2017.
@@ -8,8 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface ViewController : NSViewController
-
+@interface KZTimerPopoverViewController : NSViewController
 
 @end
-

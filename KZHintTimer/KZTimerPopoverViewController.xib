@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13196" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13196"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="KZTimerPopoverViewController">
+            <connections>
+                <outlet property="timeDurationTextField" destination="XUL-qr-C3j" id="jcH-B7-3cN"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="XUL-qr-C3j">
+                    <rect key="frame" x="180" y="168" width="120" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="120" id="QF7-9R-KlU"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="lpw-KB-Obl">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PGa-Cj-7Mp">
+                    <rect key="frame" x="167" y="204" width="146" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="设置一段时间吧！(分钟)" id="LaG-Q8-VSS">
+                        <font key="font" size="13" name=".PingFangSC-Regular"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="oZ5-eG-bm0">
+                    <rect key="frame" x="207" y="98" width="67" height="32"/>
+                    <buttonCell key="cell" type="push" title="确定" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="aJg-Zs-14q">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" size="13" name=".PingFangSC-Regular"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="pressConfirmButton:" target="-2" id="Q0Y-Qn-XUz"/>
+                    </connections>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstItem="PGa-Cj-7Mp" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="51" id="BhX-RA-AcZ"/>
+                <constraint firstItem="XUL-qr-C3j" firstAttribute="top" secondItem="PGa-Cj-7Mp" secondAttribute="bottom" constant="14" id="OYW-B9-emU"/>
+                <constraint firstItem="oZ5-eG-bm0" firstAttribute="centerX" secondItem="XUL-qr-C3j" secondAttribute="centerX" id="YGM-tB-uZt"/>
+                <constraint firstItem="oZ5-eG-bm0" firstAttribute="top" secondItem="XUL-qr-C3j" secondAttribute="bottom" constant="42" id="dpb-j4-haJ"/>
+                <constraint firstItem="PGa-Cj-7Mp" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="luO-Ft-lre"/>
+                <constraint firstItem="XUL-qr-C3j" firstAttribute="centerX" secondItem="PGa-Cj-7Mp" secondAttribute="centerX" id="tIh-Vm-pBM"/>
+            </constraints>
+        </customView>
+    </objects>
+</document>

@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		F44292821F78DFA6000784EA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F44292811F78DFA6000784EA /* AppDelegate.m */; };
-		F44292851F78DFA6000784EA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F44292841F78DFA6000784EA /* ViewController.m */; };
 		F44292871F78DFA6000784EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F44292861F78DFA6000784EA /* Assets.xcassets */; };
-		F442928A1F78DFA6000784EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F44292881F78DFA6000784EA /* Main.storyboard */; };
 		F442928D1F78DFA6000784EA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F442928C1F78DFA6000784EA /* main.m */; };
 		F44292981F78DFA6000784EA /* KZHintTimerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F44292971F78DFA6000784EA /* KZHintTimerTests.m */; };
 		F44292A31F78DFA6000784EA /* KZHintTimerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F44292A21F78DFA6000784EA /* KZHintTimerUITests.m */; };
+		F44292B31F78E4B4000784EA /* KZTimerPopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F44292B11F78E4B4000784EA /* KZTimerPopoverViewController.m */; };
+		F44292B41F78E4B4000784EA /* KZTimerPopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F44292B21F78E4B4000784EA /* KZTimerPopoverViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,10 +37,7 @@
 		F442927D1F78DFA6000784EA /* KZHintTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KZHintTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F44292801F78DFA6000784EA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F44292811F78DFA6000784EA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		F44292831F78DFA6000784EA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		F44292841F78DFA6000784EA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		F44292861F78DFA6000784EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F44292891F78DFA6000784EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F442928B1F78DFA6000784EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F442928C1F78DFA6000784EA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F442928E1F78DFA6000784EA /* KZHintTimer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KZHintTimer.entitlements; sourceTree = "<group>"; };
@@ -50,6 +47,9 @@
 		F442929E1F78DFA6000784EA /* KZHintTimerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KZHintTimerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F44292A21F78DFA6000784EA /* KZHintTimerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KZHintTimerUITests.m; sourceTree = "<group>"; };
 		F44292A41F78DFA6000784EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F44292B01F78E4B4000784EA /* KZTimerPopoverViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KZTimerPopoverViewController.h; sourceTree = "<group>"; };
+		F44292B11F78E4B4000784EA /* KZTimerPopoverViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KZTimerPopoverViewController.m; sourceTree = "<group>"; };
+		F44292B21F78E4B4000784EA /* KZTimerPopoverViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KZTimerPopoverViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,13 +102,13 @@
 			children = (
 				F44292801F78DFA6000784EA /* AppDelegate.h */,
 				F44292811F78DFA6000784EA /* AppDelegate.m */,
-				F44292831F78DFA6000784EA /* ViewController.h */,
-				F44292841F78DFA6000784EA /* ViewController.m */,
 				F44292861F78DFA6000784EA /* Assets.xcassets */,
-				F44292881F78DFA6000784EA /* Main.storyboard */,
 				F442928B1F78DFA6000784EA /* Info.plist */,
 				F442928C1F78DFA6000784EA /* main.m */,
 				F442928E1F78DFA6000784EA /* KZHintTimer.entitlements */,
+				F44292B01F78E4B4000784EA /* KZTimerPopoverViewController.h */,
+				F44292B11F78E4B4000784EA /* KZTimerPopoverViewController.m */,
+				F44292B21F78E4B4000784EA /* KZTimerPopoverViewController.xib */,
 			);
 			path = KZHintTimer;
 			sourceTree = "<group>";
@@ -238,7 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F44292871F78DFA6000784EA /* Assets.xcassets in Resources */,
-				F442928A1F78DFA6000784EA /* Main.storyboard in Resources */,
+				F44292B41F78E4B4000784EA /* KZTimerPopoverViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,7 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F44292851F78DFA6000784EA /* ViewController.m in Sources */,
+				F44292B31F78E4B4000784EA /* KZTimerPopoverViewController.m in Sources */,
 				F442928D1F78DFA6000784EA /* main.m in Sources */,
 				F44292821F78DFA6000784EA /* AppDelegate.m in Sources */,
 			);
@@ -299,17 +299,6 @@
 			targetProxy = F442929F1F78DFA6000784EA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		F44292881F78DFA6000784EA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F44292891F78DFA6000784EA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		F44292A51F78DFA6000784EA /* Debug */ = {
