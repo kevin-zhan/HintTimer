@@ -22,12 +22,33 @@ static int count = 0;
 
 - (IBAction)pressConfirmButton:(id)sender {
     NSString *timeString = [self.timeDurationTextField stringValue];
-    NSInteger timeValue = 60;
+    NSInteger timeValue = 20;
     if (timeString) {
         timeValue = [timeString integerValue];
     }
-    timeValue = timeValue / 3;
+    timeValue = timeValue;
     __weak typeof (self) weakSelf = self;
+    [NSTimer scheduledTimerWithTimeInterval:timeValue*60 repeats:YES block:^(NSTimer * _Nonnull timer) {
+        if (count % 3 == 0) {
+            [weakSelf sendStandNotification];
+        }
+        if (count %3 == 1) {
+            [weakSelf sendSitNotification];
+        }
+        count ++;
+    }];
+    [self sendNotificationWithTimeValue:timeValue];
+}
+
+- (IBAction)pressSitFirstBtn:(id)sender {
+    NSString *timeString = [self.timeDurationTextField stringValue];
+    NSInteger timeValue = 20;
+    if (timeString) {
+        timeValue = [timeString integerValue];
+    }
+    timeValue = timeValue;
+    __weak typeof (self) weakSelf = self;
+    count = 1;
     [NSTimer scheduledTimerWithTimeInterval:timeValue*60 repeats:YES block:^(NSTimer * _Nonnull timer) {
         if (count % 3 == 0) {
             [weakSelf sendStandNotification];
@@ -43,7 +64,12 @@ static int count = 0;
 - (void)sendNotificationWithTimeValue:(NSInteger) timeValue {
     NSUserNotification *localNotify = [[NSUserNotification alloc] init];
     localNotify.title = @"启动成功！~";
-    localNotify.informativeText = [NSString stringWithFormat:@"先站起来%d分钟吧！",timeValue];
+    if (count%2 == 0) {
+        localNotify.informativeText = [NSString stringWithFormat:@"先站起来%ld分钟吧！",timeValue];
+    }else {
+        localNotify.informativeText = [NSString stringWithFormat:@"先坐下来%ld分钟吧！",timeValue*2];
+    }
+    
     localNotify.soundName = NSUserNotificationDefaultSoundName;
     
     [[NSUserNotificationCenter defaultUserNotificationCenter] scheduleNotification:localNotify];
