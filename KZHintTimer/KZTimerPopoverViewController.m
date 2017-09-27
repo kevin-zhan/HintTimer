@@ -9,6 +9,7 @@
 #import "KZTimerPopoverViewController.h"
 
 @interface KZTimerPopoverViewController () <NSUserNotificationCenterDelegate>
+@property (weak) IBOutlet NSTextField *currentCount;
 @property (weak) IBOutlet NSTextField *timeDurationTextField;
 @property (strong, nonatomic) NSTimer *theOnlyTimer;
 @end
@@ -86,6 +87,9 @@ static int count = 0;
 
 
 - (void) sendNotificationWithTitle:(NSString *)title Information:(NSString *)infomation {
+    
+    self.currentCount.stringValue = [NSString stringWithFormat:@"当前count:%d",count];
+    
     NSUserNotification *localNotify = [[NSUserNotification alloc] init];
     localNotify.title = title;
     localNotify.informativeText = infomation;

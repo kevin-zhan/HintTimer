@@ -8,6 +8,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="KZTimerPopoverViewController">
             <connections>
+                <outlet property="currentCount" destination="oNl-k6-xUp" id="a7a-E8-jif"/>
                 <outlet property="timeDurationTextField" destination="XUL-qr-C3j" id="jcH-B7-3cN"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
@@ -67,10 +68,19 @@
                         <action selector="pressQuitButton:" target="-2" id="hpm-Iw-fZZ"/>
                     </connections>
                 </button>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="oNl-k6-xUp">
+                    <rect key="frame" x="57" y="146" width="78" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="当前count:0" id="gVi-1J-UKk">
+                        <font key="font" size="13" name=".PingFangSC-Regular"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
             </subviews>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="bQo-xo-sgl" secondAttribute="trailing" id="APa-0J-Kcw"/>
                 <constraint firstItem="PGa-Cj-7Mp" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="51" id="BhX-RA-AcZ"/>
+                <constraint firstItem="oNl-k6-xUp" firstAttribute="top" secondItem="XUL-qr-C3j" secondAttribute="bottom" constant="8" id="Ewx-9Y-pJx"/>
                 <constraint firstItem="15c-xs-IB4" firstAttribute="centerX" secondItem="oZ5-eG-bm0" secondAttribute="centerX" id="MkT-J9-ft8"/>
                 <constraint firstItem="XUL-qr-C3j" firstAttribute="top" secondItem="PGa-Cj-7Mp" secondAttribute="bottom" constant="14" id="OYW-B9-emU"/>
                 <constraint firstItem="oZ5-eG-bm0" firstAttribute="centerX" secondItem="XUL-qr-C3j" secondAttribute="centerX" id="YGM-tB-uZt"/>
@@ -78,6 +88,7 @@
                 <constraint firstItem="15c-xs-IB4" firstAttribute="top" secondItem="oZ5-eG-bm0" secondAttribute="bottom" constant="21" id="gmb-xt-bQt"/>
                 <constraint firstAttribute="bottom" secondItem="bQo-xo-sgl" secondAttribute="bottom" id="hIF-Y8-9sg"/>
                 <constraint firstItem="PGa-Cj-7Mp" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="luO-Ft-lre"/>
+                <constraint firstItem="oNl-k6-xUp" firstAttribute="centerX" secondItem="XUL-qr-C3j" secondAttribute="centerX" id="mPf-md-thl"/>
                 <constraint firstItem="XUL-qr-C3j" firstAttribute="centerX" secondItem="PGa-Cj-7Mp" secondAttribute="centerX" id="tIh-Vm-pBM"/>
             </constraints>
             <point key="canvasLocation" x="-4" y="170.5"/>
