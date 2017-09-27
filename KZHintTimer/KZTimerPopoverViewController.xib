@@ -57,14 +57,26 @@
                         <action selector="pressSitFirstBtn:" target="-2" id="FRo-Ig-02c"/>
                     </connections>
                 </button>
+                <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bQo-xo-sgl">
+                    <rect key="frame" x="110" y="-7" width="88" height="32"/>
+                    <buttonCell key="cell" type="push" title="不玩了~" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="j8x-Pa-df7">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" size="13" name=".PingFangSC-Regular"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="pressQuitButton:" target="-2" id="hpm-Iw-fZZ"/>
+                    </connections>
+                </button>
             </subviews>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="bQo-xo-sgl" secondAttribute="trailing" id="APa-0J-Kcw"/>
                 <constraint firstItem="PGa-Cj-7Mp" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="51" id="BhX-RA-AcZ"/>
                 <constraint firstItem="15c-xs-IB4" firstAttribute="centerX" secondItem="oZ5-eG-bm0" secondAttribute="centerX" id="MkT-J9-ft8"/>
                 <constraint firstItem="XUL-qr-C3j" firstAttribute="top" secondItem="PGa-Cj-7Mp" secondAttribute="bottom" constant="14" id="OYW-B9-emU"/>
                 <constraint firstItem="oZ5-eG-bm0" firstAttribute="centerX" secondItem="XUL-qr-C3j" secondAttribute="centerX" id="YGM-tB-uZt"/>
                 <constraint firstItem="oZ5-eG-bm0" firstAttribute="top" secondItem="XUL-qr-C3j" secondAttribute="bottom" constant="42" id="dpb-j4-haJ"/>
                 <constraint firstItem="15c-xs-IB4" firstAttribute="top" secondItem="oZ5-eG-bm0" secondAttribute="bottom" constant="21" id="gmb-xt-bQt"/>
+                <constraint firstAttribute="bottom" secondItem="bQo-xo-sgl" secondAttribute="bottom" id="hIF-Y8-9sg"/>
                 <constraint firstItem="PGa-Cj-7Mp" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="luO-Ft-lre"/>
                 <constraint firstItem="XUL-qr-C3j" firstAttribute="centerX" secondItem="PGa-Cj-7Mp" secondAttribute="centerX" id="tIh-Vm-pBM"/>
             </constraints>

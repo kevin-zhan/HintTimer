@@ -10,7 +10,7 @@
 
 @interface KZTimerPopoverViewController () <NSUserNotificationCenterDelegate>
 @property (weak) IBOutlet NSTextField *timeDurationTextField;
-
+@property (strong, nonatomic) NSTimer *theOnlyTimer;
 @end
 static int count = 0;
 @implementation KZTimerPopoverViewController
@@ -19,7 +19,7 @@ static int count = 0;
     [super viewDidLoad];
     // Do view setup here.
 }
-
+//点击操作方法
 - (IBAction)pressConfirmButton:(id)sender {
     NSString *timeString = [self.timeDurationTextField stringValue];
     NSInteger timeValue = 20;
@@ -28,7 +28,8 @@ static int count = 0;
     }
     timeValue = timeValue;
     __weak typeof (self) weakSelf = self;
-    [NSTimer scheduledTimerWithTimeInterval:timeValue*60 repeats:YES block:^(NSTimer * _Nonnull timer) {
+    [self.theOnlyTimer invalidate];
+    self.theOnlyTimer = [NSTimer scheduledTimerWithTimeInterval:timeValue*60 repeats:YES block:^(NSTimer * _Nonnull timer) {
         if (count % 3 == 0) {
             [weakSelf sendStandNotification];
         }
@@ -49,7 +50,8 @@ static int count = 0;
     timeValue = timeValue;
     __weak typeof (self) weakSelf = self;
     count = 1;
-    [NSTimer scheduledTimerWithTimeInterval:timeValue*60 repeats:YES block:^(NSTimer * _Nonnull timer) {
+    [self.theOnlyTimer invalidate];
+    self.theOnlyTimer = [NSTimer scheduledTimerWithTimeInterval:timeValue*60 repeats:YES block:^(NSTimer * _Nonnull timer) {
         if (count % 3 == 0) {
             [weakSelf sendStandNotification];
         }
@@ -61,41 +63,39 @@ static int count = 0;
     [self sendNotificationWithTimeValue:timeValue];
 }
 
-- (void)sendNotificationWithTimeValue:(NSInteger) timeValue {
-    NSUserNotification *localNotify = [[NSUserNotification alloc] init];
-    localNotify.title = @"启动成功！~";
+- (IBAction)pressQuitButton:(id)sender {
+    [[NSApplication sharedApplication] terminate:self];
+}
+
+//发送通知操作
+- (void)sendNotificationWithTimeValue:(NSInteger) timeValue{
     if (count%2 == 0) {
-        localNotify.informativeText = [NSString stringWithFormat:@"先站起来%ld分钟吧！",timeValue];
-    }else {
-        localNotify.informativeText = [NSString stringWithFormat:@"先坐下来%ld分钟吧！",timeValue*2];
+        [self sendNotificationWithTitle:@"设置成功！~" Information:[NSString stringWithFormat:@"先坐下来%ld分钟吧！",timeValue*2]];
+        return;
     }
-    
-    localNotify.soundName = NSUserNotificationDefaultSoundName;
-    
-    [[NSUserNotificationCenter defaultUserNotificationCenter] scheduleNotification:localNotify];
-    [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
+    [self sendNotificationWithTitle:@"设置成功！~" Information:[NSString stringWithFormat:@"先坐下来%ld分钟吧！",timeValue*2]];
 }
 
 - (void)sendStandNotification {
-    NSUserNotification *localNotify = [[NSUserNotification alloc] init];
-    localNotify.title = @"换个姿势吧？🤣";
-    localNotify.informativeText = @"起来，不愿做奴隶的人们！~";
-    localNotify.soundName = NSUserNotificationDefaultSoundName;
-    
-    [[NSUserNotificationCenter defaultUserNotificationCenter] scheduleNotification:localNotify];
-    [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
+    [self sendNotificationWithTitle:@"换个姿势吧！？🤣" Information:@"起来，不愿做奴隶的人们！~"];
 }
 
 - (void)sendSitNotification {
+    [self sendNotificationWithTitle:@"换个姿势吧！？🤣" Information:@"坐下，享受被AS支配的恐惧~~~"];
+}
+
+
+- (void) sendNotificationWithTitle:(NSString *)title Information:(NSString *)infomation {
     NSUserNotification *localNotify = [[NSUserNotification alloc] init];
-    localNotify.title = @"换个姿势吧？🤣";
-    localNotify.informativeText = @"坐下，享受被AS支配的恐惧~~~";
+    localNotify.title = title;
+    localNotify.informativeText = infomation;
     localNotify.soundName = NSUserNotificationDefaultSoundName;
     
     [[NSUserNotificationCenter defaultUserNotificationCenter] scheduleNotification:localNotify];
     [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
 }
 
+//通知代理方法
 - (void)userNotificationCenter:(NSUserNotificationCenter *)center didDeliverNotification:(NSUserNotification *)notification {
     
 }
