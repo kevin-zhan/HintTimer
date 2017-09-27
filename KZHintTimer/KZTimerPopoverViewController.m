@@ -71,7 +71,7 @@ static int count = 0;
 //发送通知操作
 - (void)sendNotificationWithTimeValue:(NSInteger) timeValue{
     if (count%2 == 0) {
-        [self sendNotificationWithTitle:@"设置成功！~" Information:[NSString stringWithFormat:@"先坐下来%ld分钟吧！",timeValue*2]];
+        [self sendNotificationWithTitle:@"设置成功！~" Information:[NSString stringWithFormat:@"先站起来%ld分钟吧！",timeValue]];
         return;
     }
     [self sendNotificationWithTitle:@"设置成功！~" Information:[NSString stringWithFormat:@"先坐下来%ld分钟吧！",timeValue*2]];
