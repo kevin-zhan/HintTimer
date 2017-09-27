@@ -88,7 +88,7 @@ static int count = 0;
 
 - (void) sendNotificationWithTitle:(NSString *)title Information:(NSString *)infomation {
     
-    self.currentCount.stringValue = [NSString stringWithFormat:@"当前count:%d",count];
+    self.currentCount.stringValue = [NSString stringWithFormat:@"当前状态:%@",count%2==0?@"站着":@"坐着"];
     
     NSUserNotification *localNotify = [[NSUserNotification alloc] init];
     localNotify.title = title;
