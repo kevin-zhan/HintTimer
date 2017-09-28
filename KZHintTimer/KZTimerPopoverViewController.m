@@ -23,11 +23,10 @@ static int count = 0;
 //点击操作方法
 - (IBAction)pressConfirmButton:(id)sender {
     NSString *timeString = [self.timeDurationTextField stringValue];
-    NSInteger timeValue = 20;
+    NSInteger timeValue = 30;
     if (timeString) {
         timeValue = [timeString integerValue];
     }
-    timeValue = timeValue;
     __weak typeof (self) weakSelf = self;
     [self.theOnlyTimer invalidate];
     self.theOnlyTimer = [NSTimer scheduledTimerWithTimeInterval:timeValue*60 repeats:YES block:^(NSTimer * _Nonnull timer) {
@@ -44,11 +43,11 @@ static int count = 0;
 
 - (IBAction)pressSitFirstBtn:(id)sender {
     NSString *timeString = [self.timeDurationTextField stringValue];
-    NSInteger timeValue = 20;
+    NSInteger timeValue = 30;
     if (timeString) {
         timeValue = [timeString integerValue];
     }
-    timeValue = timeValue;
+    timeValue = timeValue / 2;
     __weak typeof (self) weakSelf = self;
     count = 1;
     [self.theOnlyTimer invalidate];

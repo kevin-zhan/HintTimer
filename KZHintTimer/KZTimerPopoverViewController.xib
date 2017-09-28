@@ -24,7 +24,7 @@
                     <constraints>
                         <constraint firstAttribute="width" constant="120" id="QF7-9R-KlU"/>
                     </constraints>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="lpw-KB-Obl">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="30" drawsBackground="YES" id="lpw-KB-Obl">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -32,7 +32,7 @@
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PGa-Cj-7Mp">
                     <rect key="frame" x="23" y="207" width="146" height="17"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="设置想站多久吧！(分钟)" id="LaG-Q8-VSS">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="设置一段时间吧！(分钟)" id="LaG-Q8-VSS">
                         <font key="font" size="13" name=".PingFangSC-Regular"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -60,7 +60,7 @@
                 </button>
                 <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bQo-xo-sgl">
                     <rect key="frame" x="110" y="-7" width="88" height="32"/>
-                    <buttonCell key="cell" type="push" title="不玩了~" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="j8x-Pa-df7">
+                    <buttonCell key="cell" type="push" title="下班了~" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="j8x-Pa-df7">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" size="13" name=".PingFangSC-Regular"/>
                     </buttonCell>
@@ -76,10 +76,20 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="W22-8Z-ioV">
+                    <rect key="frame" x="-2" y="258" width="126" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="KevinDSoon's Timer" id="tNA-X1-HG9">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
             </subviews>
             <constraints>
+                <constraint firstItem="W22-8Z-ioV" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="0eM-Ma-P6k"/>
                 <constraint firstAttribute="trailing" secondItem="bQo-xo-sgl" secondAttribute="trailing" id="APa-0J-Kcw"/>
                 <constraint firstItem="PGa-Cj-7Mp" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="51" id="BhX-RA-AcZ"/>
+                <constraint firstItem="W22-8Z-ioV" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="CeC-2p-l44"/>
                 <constraint firstItem="oNl-k6-xUp" firstAttribute="top" secondItem="XUL-qr-C3j" secondAttribute="bottom" constant="8" id="Ewx-9Y-pJx"/>
                 <constraint firstItem="15c-xs-IB4" firstAttribute="centerX" secondItem="oZ5-eG-bm0" secondAttribute="centerX" id="MkT-J9-ft8"/>
                 <constraint firstItem="XUL-qr-C3j" firstAttribute="top" secondItem="PGa-Cj-7Mp" secondAttribute="bottom" constant="14" id="OYW-B9-emU"/>
