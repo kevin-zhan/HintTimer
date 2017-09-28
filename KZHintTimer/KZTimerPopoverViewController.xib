@@ -45,7 +45,7 @@
                         <font key="font" size="13" name=".PingFangSC-Regular"/>
                     </buttonCell>
                     <connections>
-                        <action selector="pressConfirmButton:" target="-2" id="Q0Y-Qn-XUz"/>
+                        <action selector="pressStandFirstButton:" target="-2" id="Q0Y-Qn-XUz"/>
                     </connections>
                 </button>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="15c-xs-IB4">
@@ -55,7 +55,7 @@
                         <font key="font" size="13" name=".PingFangSC-Regular"/>
                     </buttonCell>
                     <connections>
-                        <action selector="pressSitFirstBtn:" target="-2" id="FRo-Ig-02c"/>
+                        <action selector="pressSitFirstBtn:" target="-2" id="aYO-Sy-4gz"/>
                     </connections>
                 </button>
                 <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bQo-xo-sgl">
@@ -63,10 +63,10 @@
                     <buttonCell key="cell" type="push" title="下班了~" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="j8x-Pa-df7">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" size="13" name=".PingFangSC-Regular"/>
+                        <connections>
+                            <action selector="pressQuitButton:" target="-2" id="uGu-Uy-vQt"/>
+                        </connections>
                     </buttonCell>
-                    <connections>
-                        <action selector="pressQuitButton:" target="-2" id="hpm-Iw-fZZ"/>
-                    </connections>
                 </button>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="oNl-k6-xUp">
                     <rect key="frame" x="51" y="146" width="90" height="17"/>

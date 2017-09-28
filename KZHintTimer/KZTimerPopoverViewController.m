@@ -21,14 +21,17 @@ static int count = 0;
     // Do view setup here.
 }
 //点击操作方法
-- (IBAction)pressConfirmButton:(id)sender {
+- (IBAction)pressStandFirstButton:(id)sender {
     NSString *timeString = [self.timeDurationTextField stringValue];
     NSInteger timeValue = 30;
-    if (timeString) {
+    if ([timeString length] > 0) {
         timeValue = [timeString integerValue];
     }
-    __weak typeof (self) weakSelf = self;
+    if (timeValue < 5) {
+        timeValue = 5;
+    }
     [self.theOnlyTimer invalidate];
+    __weak typeof (self) weakSelf = self;
     self.theOnlyTimer = [NSTimer scheduledTimerWithTimeInterval:timeValue*60 repeats:YES block:^(NSTimer * _Nonnull timer) {
         if (count % 3 == 0) {
             [weakSelf sendStandNotification];
@@ -38,19 +41,22 @@ static int count = 0;
         }
         count ++;
     }];
+    count = 0;
     [self sendNotificationWithTimeValue:timeValue];
 }
 
 - (IBAction)pressSitFirstBtn:(id)sender {
     NSString *timeString = [self.timeDurationTextField stringValue];
     NSInteger timeValue = 30;
-    if (timeString) {
+    if ([timeString length] > 0) {
         timeValue = [timeString integerValue];
     }
+    if (timeValue < 5) {
+        timeValue = 5;
+    }
     timeValue = timeValue / 2;
-    __weak typeof (self) weakSelf = self;
-    count = 1;
     [self.theOnlyTimer invalidate];
+    __weak typeof (self) weakSelf = self;
     self.theOnlyTimer = [NSTimer scheduledTimerWithTimeInterval:timeValue*60 repeats:YES block:^(NSTimer * _Nonnull timer) {
         if (count % 3 == 0) {
             [weakSelf sendStandNotification];
@@ -60,6 +66,7 @@ static int count = 0;
         }
         count ++;
     }];
+    count = 1;
     [self sendNotificationWithTimeValue:timeValue];
 }
 
@@ -69,7 +76,7 @@ static int count = 0;
 
 //发送通知操作
 - (void)sendNotificationWithTimeValue:(NSInteger) timeValue{
-    if (count%2 == 0) {
+    if (count % 2 == 0) {
         [self sendNotificationWithTitle:@"设置成功！~" Information:[NSString stringWithFormat:@"先站起来%ld分钟吧！",timeValue]];
         return;
     }
