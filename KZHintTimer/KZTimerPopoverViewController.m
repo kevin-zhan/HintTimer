@@ -32,6 +32,7 @@ static int count = 0;
     }
     [self.theOnlyTimer invalidate];
     __weak typeof (self) weakSelf = self;
+    count = 0;
     self.theOnlyTimer = [NSTimer scheduledTimerWithTimeInterval:timeValue*60 repeats:YES block:^(NSTimer * _Nonnull timer) {
         if (count % 3 == 0) {
             [weakSelf sendStandNotification];
@@ -41,7 +42,7 @@ static int count = 0;
         }
         count ++;
     }];
-    count = 0;
+    
     [self sendNotificationWithTimeValue:timeValue];
 }
 
@@ -57,6 +58,7 @@ static int count = 0;
     timeValue = timeValue / 2;
     [self.theOnlyTimer invalidate];
     __weak typeof (self) weakSelf = self;
+    count = 1;
     self.theOnlyTimer = [NSTimer scheduledTimerWithTimeInterval:timeValue*60 repeats:YES block:^(NSTimer * _Nonnull timer) {
         if (count % 3 == 0) {
             [weakSelf sendStandNotification];
@@ -66,7 +68,7 @@ static int count = 0;
         }
         count ++;
     }];
-    count = 1;
+    
     [self sendNotificationWithTimeValue:timeValue];
 }
 
@@ -78,9 +80,12 @@ static int count = 0;
 - (void)sendNotificationWithTimeValue:(NSInteger) timeValue{
     if (count % 2 == 0) {
         [self sendNotificationWithTitle:@"设置成功！~" Information:[NSString stringWithFormat:@"先站起来%ld分钟吧！",timeValue]];
-        return;
+        
+    } else {
+        [self sendNotificationWithTitle:@"设置成功！~" Information:[NSString stringWithFormat:@"先坐下来%ld分钟吧！",timeValue*2]];
     }
-    [self sendNotificationWithTitle:@"设置成功！~" Information:[NSString stringWithFormat:@"先坐下来%ld分钟吧！",timeValue*2]];
+    count++;
+    
 }
 
 - (void)sendStandNotification {
