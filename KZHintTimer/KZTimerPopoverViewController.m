@@ -18,74 +18,61 @@ static int count = 0;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do view setup here.
+    //设置通知代理
+    [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
 }
 //点击操作方法
 - (IBAction)pressStandFirstButton:(id)sender {
-    NSString *timeString = [self.timeDurationTextField stringValue];
-    NSInteger timeValue = 30;
-    if ([timeString length] > 0) {
-        timeValue = [timeString integerValue];
-    }
-    if (timeValue < 5) {
-        timeValue = 5;
-    }
-    [self.theOnlyTimer invalidate];
-    __weak typeof (self) weakSelf = self;
     count = 0;
-    self.theOnlyTimer = [NSTimer scheduledTimerWithTimeInterval:timeValue*60 repeats:YES block:^(NSTimer * _Nonnull timer) {
-        if (count % 3 == 0) {
-            [weakSelf sendStandNotification];
-        }
-        if (count %3 == 1) {
-            [weakSelf sendSitNotification];
-        }
-        count ++;
-    }];
-    
-    [self sendNotificationWithTimeValue:timeValue];
+    [self universalBeginTimer];
 }
 
 - (IBAction)pressSitFirstBtn:(id)sender {
-    NSString *timeString = [self.timeDurationTextField stringValue];
-    NSInteger timeValue = 30;
-    if ([timeString length] > 0) {
-        timeValue = [timeString integerValue];
-    }
-    if (timeValue < 5) {
-        timeValue = 5;
-    }
-    timeValue = timeValue / 2;
-    [self.theOnlyTimer invalidate];
-    __weak typeof (self) weakSelf = self;
     count = 1;
-    self.theOnlyTimer = [NSTimer scheduledTimerWithTimeInterval:timeValue*60 repeats:YES block:^(NSTimer * _Nonnull timer) {
-        if (count % 3 == 0) {
-            [weakSelf sendStandNotification];
-        }
-        if (count %3 == 1) {
-            [weakSelf sendSitNotification];
-        }
-        count ++;
-    }];
-    
-    [self sendNotificationWithTimeValue:timeValue];
+    [self universalBeginTimer];
 }
 
 - (IBAction)pressQuitButton:(id)sender {
     [[NSApplication sharedApplication] terminate:self];
 }
 
+- (void)universalBeginTimer {
+    NSString *timeString = [self.timeDurationTextField stringValue];
+    NSInteger timeValue = 30;
+    if ([timeString length] > 0) {
+        timeValue = [timeString integerValue];
+    }
+    if (timeValue < 5) {
+        timeValue = 5;
+    }
+    if (count != 0) {
+        //说明是坐姿优先，将时间间距除2
+        timeValue = timeValue/2;
+    }
+    
+    [self.theOnlyTimer invalidate];
+    __weak typeof (self) weakSelf = self;
+    self.theOnlyTimer = [NSTimer scheduledTimerWithTimeInterval:timeValue*60 repeats:YES block:^(NSTimer * _Nonnull timer) {
+        if (count % 3 == 0) {
+            [weakSelf sendStandNotification];
+        }
+        if (count %3 == 1) {
+            [weakSelf sendSitNotification];
+        }
+        count++;
+    }];
+    
+    [self sendNotificationWithTimeValue:timeValue];
+}
+
 //发送通知操作
 - (void)sendNotificationWithTimeValue:(NSInteger) timeValue{
-    if (count % 2 == 0) {
+    if (count == 0) {
         [self sendNotificationWithTitle:@"设置成功！~" Information:[NSString stringWithFormat:@"先站起来%ld分钟吧！",timeValue]];
         
     } else {
         [self sendNotificationWithTitle:@"设置成功！~" Information:[NSString stringWithFormat:@"先坐下来%ld分钟吧！",timeValue*2]];
     }
-    count++;
-    
 }
 
 - (void)sendStandNotification {
@@ -99,7 +86,7 @@ static int count = 0;
 
 - (void) sendNotificationWithTitle:(NSString *)title Information:(NSString *)infomation {
     
-    self.currentCount.stringValue = [NSString stringWithFormat:@"当前状态:%@",count%2==0?@"站着":@"坐着"];
+    self.currentCount.stringValue = [NSString stringWithFormat:@"当前状态:%@(%d)",count%3==0?@"站着":@"坐着",count];
     
     NSUserNotification *localNotify = [[NSUserNotification alloc] init];
     localNotify.title = title;
@@ -107,7 +94,6 @@ static int count = 0;
     localNotify.soundName = NSUserNotificationDefaultSoundName;
     
     [[NSUserNotificationCenter defaultUserNotificationCenter] scheduleNotification:localNotify];
-    [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
 }
 
 //通知代理方法
