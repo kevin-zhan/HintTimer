@@ -9,7 +9,8 @@
         <customObject id="-2" userLabel="File's Owner" customClass="KZTimerPopoverViewController">
             <connections>
                 <outlet property="currentCount" destination="oNl-k6-xUp" id="a7a-E8-jif"/>
-                <outlet property="timeDurationTextField" destination="XUL-qr-C3j" id="jcH-B7-3cN"/>
+                <outlet property="sitTimeDurationTextField" destination="MEZ-37-699" id="ebr-ao-v6x"/>
+                <outlet property="standTimeDurationTextField" destination="XUL-qr-C3j" id="TQA-kL-UC6"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -20,9 +21,9 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="XUL-qr-C3j">
-                    <rect key="frame" x="36" y="171" width="120" height="22"/>
+                    <rect key="frame" x="56" y="171" width="80" height="22"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="120" id="QF7-9R-KlU"/>
+                        <constraint firstAttribute="width" constant="80" id="QF7-9R-KlU"/>
                     </constraints>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="30" drawsBackground="YES" id="lpw-KB-Obl">
                         <font key="font" metaFont="system"/>
@@ -39,7 +40,7 @@
                     </textFieldCell>
                 </textField>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="oZ5-eG-bm0">
-                    <rect key="frame" x="43" y="101" width="107" height="32"/>
+                    <rect key="frame" x="43" y="76" width="107" height="32"/>
                     <buttonCell key="cell" type="push" title="先站一会儿" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="aJg-Zs-14q">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" size="13" name=".PingFangSC-Regular"/>
@@ -49,7 +50,7 @@
                     </connections>
                 </button>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="15c-xs-IB4">
-                    <rect key="frame" x="43" y="59" width="107" height="32"/>
+                    <rect key="frame" x="43" y="34" width="107" height="32"/>
                     <buttonCell key="cell" type="push" title="先坐一会儿" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Pgg-js-PeD">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" size="13" name=".PingFangSC-Regular"/>
@@ -69,7 +70,7 @@
                     </buttonCell>
                 </button>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="oNl-k6-xUp">
-                    <rect key="frame" x="51" y="146" width="90" height="17"/>
+                    <rect key="frame" x="51" y="121" width="90" height="17"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="当前状态:idle~" id="gVi-1J-UKk">
                         <font key="font" size="13" name=".PingFangSC-Regular"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -84,24 +85,55 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="MEZ-37-699">
+                    <rect key="frame" x="56" y="146" width="80" height="22"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="60" drawsBackground="YES" id="MUk-GA-jR0">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4EZ-ER-9dZ">
+                    <rect key="frame" x="23" y="174" width="31" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="站：" id="kza-bb-Urc">
+                        <font key="font" size="13" name=".PingFangSC-Regular"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sgd-V4-npS">
+                    <rect key="frame" x="23" y="148" width="31" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="坐：" id="VFp-1Y-xdL">
+                        <font key="font" size="13" name=".PingFangSC-Regular"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
             </subviews>
             <constraints>
                 <constraint firstItem="W22-8Z-ioV" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="0eM-Ma-P6k"/>
+                <constraint firstItem="MEZ-37-699" firstAttribute="width" secondItem="XUL-qr-C3j" secondAttribute="width" id="1iA-l1-zIA"/>
+                <constraint firstItem="MEZ-37-699" firstAttribute="top" secondItem="XUL-qr-C3j" secondAttribute="bottom" constant="3" id="4xO-2j-ghf"/>
+                <constraint firstItem="4EZ-ER-9dZ" firstAttribute="centerY" secondItem="XUL-qr-C3j" secondAttribute="centerY" id="76V-EN-Qct"/>
                 <constraint firstAttribute="trailing" secondItem="bQo-xo-sgl" secondAttribute="trailing" id="APa-0J-Kcw"/>
                 <constraint firstItem="PGa-Cj-7Mp" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="51" id="BhX-RA-AcZ"/>
                 <constraint firstItem="W22-8Z-ioV" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="CeC-2p-l44"/>
-                <constraint firstItem="oNl-k6-xUp" firstAttribute="top" secondItem="XUL-qr-C3j" secondAttribute="bottom" constant="8" id="Ewx-9Y-pJx"/>
+                <constraint firstItem="sgd-V4-npS" firstAttribute="centerY" secondItem="MEZ-37-699" secondAttribute="centerY" id="FhB-qW-eB9"/>
                 <constraint firstItem="15c-xs-IB4" firstAttribute="centerX" secondItem="oZ5-eG-bm0" secondAttribute="centerX" id="MkT-J9-ft8"/>
+                <constraint firstItem="oZ5-eG-bm0" firstAttribute="top" secondItem="oNl-k6-xUp" secondAttribute="bottom" constant="17" id="Mxg-LX-OD5"/>
+                <constraint firstItem="4EZ-ER-9dZ" firstAttribute="leading" secondItem="PGa-Cj-7Mp" secondAttribute="leading" id="Nmx-BA-tlh"/>
                 <constraint firstItem="XUL-qr-C3j" firstAttribute="top" secondItem="PGa-Cj-7Mp" secondAttribute="bottom" constant="14" id="OYW-B9-emU"/>
+                <constraint firstItem="MEZ-37-699" firstAttribute="centerX" secondItem="XUL-qr-C3j" secondAttribute="centerX" id="WYM-NX-2Go"/>
                 <constraint firstItem="oZ5-eG-bm0" firstAttribute="centerX" secondItem="XUL-qr-C3j" secondAttribute="centerX" id="YGM-tB-uZt"/>
-                <constraint firstItem="oZ5-eG-bm0" firstAttribute="top" secondItem="XUL-qr-C3j" secondAttribute="bottom" constant="42" id="dpb-j4-haJ"/>
                 <constraint firstItem="15c-xs-IB4" firstAttribute="top" secondItem="oZ5-eG-bm0" secondAttribute="bottom" constant="21" id="gmb-xt-bQt"/>
                 <constraint firstAttribute="bottom" secondItem="bQo-xo-sgl" secondAttribute="bottom" id="hIF-Y8-9sg"/>
+                <constraint firstItem="oNl-k6-xUp" firstAttribute="top" secondItem="MEZ-37-699" secondAttribute="bottom" constant="8" id="kZr-HJ-qIC"/>
                 <constraint firstItem="PGa-Cj-7Mp" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="luO-Ft-lre"/>
                 <constraint firstItem="oNl-k6-xUp" firstAttribute="centerX" secondItem="XUL-qr-C3j" secondAttribute="centerX" id="mPf-md-thl"/>
+                <constraint firstItem="sgd-V4-npS" firstAttribute="leading" secondItem="4EZ-ER-9dZ" secondAttribute="leading" id="nxu-ue-PJh"/>
                 <constraint firstItem="XUL-qr-C3j" firstAttribute="centerX" secondItem="PGa-Cj-7Mp" secondAttribute="centerX" id="tIh-Vm-pBM"/>
             </constraints>
-            <point key="canvasLocation" x="-4" y="170.5"/>
+            <point key="canvasLocation" x="-581" y="109"/>
         </customView>
     </objects>
 </document>
