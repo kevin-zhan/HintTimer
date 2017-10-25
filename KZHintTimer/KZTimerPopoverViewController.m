@@ -56,8 +56,8 @@ static int count = 0;
     __weak typeof (self) weakSelf = self;
     self.theOnlyTimer = [NSTimer scheduledTimerWithTimeInterval:1*60 repeats:YES block:^(NSTimer * _Nonnull timer) {
         count ++;
-        int canStand = count % self.standTime;
-        int canSit = count % self.sitTime;
+        int canSit = count % self.standTime;
+        int canStand = count % self.sitTime;
         if ((canSit != 0) && (canStand != 0)) {
             return;
         }
