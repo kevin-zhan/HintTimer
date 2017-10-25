@@ -16,14 +16,13 @@ typedef NS_ENUM(NSInteger, KZWorkPositionSytle) {
 @property (weak) IBOutlet NSTextField *standTimeDurationTextField;
 @property (weak) IBOutlet NSTextField *sitTimeDurationTextField;
 @property (weak) IBOutlet NSTextField *currentCount;
-@property (strong, nonatomic) NSTimer *theDelayedTimer;
-@property (strong, nonatomic) NSTimer *theImmediateTimer;
+@property (strong, nonatomic) NSTimer *theOnlyTimer;
 @property (assign, nonatomic) NSInteger standTime;
 @property (assign, nonatomic) NSInteger sitTime;
 @property (assign, atomic) KZWorkPositionSytle currentWorkPositionStyle;
 @end
 @implementation KZTimerPopoverViewController
-
+static int count = 0;
 - (void)viewDidLoad {
     [super viewDidLoad];
     //设置通知代理
@@ -50,42 +49,26 @@ typedef NS_ENUM(NSInteger, KZWorkPositionSytle) {
     [[NSApplication sharedApplication] terminate:self];
 }
 
+//启动timer
 - (void)universalBeginTimer {
-    NSTimeInterval delayTimeInterval;
-    NSTimeInterval loopTimeInterval;
-    if (self.currentWorkPositionStyle == KZWorkPositionSytleStand) {
-        delayTimeInterval = self.standTime;
-    } else {
-        delayTimeInterval = self.sitTime;
-    }
-    loopTimeInterval = self.standTime + self.sitTime;
-//    if (delayTimeInterval < 5) {
-//        delayTimeInterval = 5;
-//        loopTimeInterval = self.standTime + self.sitTime;
-//    }
-    
-    [self.theDelayedTimer invalidate];
-    [self.theImmediateTimer invalidate];
+    count = 0;
+    [self.theOnlyTimer invalidate];
     __weak typeof (self) weakSelf = self;
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayTimeInterval * 60 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        if (self.currentWorkPositionStyle == KZWorkPositionSytleStand) {
-            [weakSelf sendSitNotification];
-        } else {
-            [weakSelf sendStandNotification];
+    self.theOnlyTimer = [NSTimer scheduledTimerWithTimeInterval:1*60 repeats:YES block:^(NSTimer * _Nonnull timer) {
+        count ++;
+        int canStand = count % self.standTime;
+        int canSit = count % self.sitTime;
+        if ((canSit != 0) && (canStand != 0)) {
+            return;
         }
-        weakSelf.theDelayedTimer = [NSTimer scheduledTimerWithTimeInterval:loopTimeInterval*60 repeats:YES block:^(NSTimer * _Nonnull timer) {
-            if (self.currentWorkPositionStyle == KZWorkPositionSytleStand) {
+        if (self.currentWorkPositionStyle == KZWorkPositionSytleStand) {
+            if (canSit == 0) {
                 [weakSelf sendSitNotification];
-            } else {
+            }
+        } else {
+            if (canStand == 0) {
                 [weakSelf sendStandNotification];
             }
-        }];
-    });
-    self.theDelayedTimer = [NSTimer scheduledTimerWithTimeInterval:loopTimeInterval*60 repeats:YES block:^(NSTimer * _Nonnull timer) {
-        if (self.currentWorkPositionStyle == KZWorkPositionSytleStand) {
-            [weakSelf sendSitNotification];
-        } else {
-            [weakSelf sendStandNotification];
         }
     }];
     [self sendSettingSuccessNotification];
@@ -120,6 +103,9 @@ typedef NS_ENUM(NSInteger, KZWorkPositionSytle) {
     localNotify.informativeText = infomation;
     localNotify.soundName = NSUserNotificationDefaultSoundName;
     
+    localNotify.actionButtonTitle = @"OK~";
+    
+    
     [[NSUserNotificationCenter defaultUserNotificationCenter] scheduleNotification:localNotify];
 }
 
@@ -127,8 +113,8 @@ typedef NS_ENUM(NSInteger, KZWorkPositionSytle) {
 - (void)refreshTextFieldInfomation {
     self.standTime = [self getTimeIntegerFromString:self.standTimeDurationTextField.stringValue];
     self.sitTime = [self getTimeIntegerFromString:self.sitTimeDurationTextField.stringValue];
-    if (self.sitTime * self.standTime == 0) {
-        self.standTime = 5;
+    if (self.sitTime + self.standTime == 0) {
+        self.standTime = 20;
     }
     if (self.sitTime == 0) {
         self.sitTime = self.standTime * 2;
@@ -150,7 +136,7 @@ typedef NS_ENUM(NSInteger, KZWorkPositionSytle) {
 
 //通知代理方法
 - (void)userNotificationCenter:(NSUserNotificationCenter *)center didDeliverNotification:(NSUserNotification *)notification {
-    
+
 }
 
 - (void)userNotificationCenter:(NSUserNotificationCenter *)center didActivateNotification:(NSUserNotification *)notification {
