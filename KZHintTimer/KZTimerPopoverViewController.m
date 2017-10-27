@@ -63,10 +63,12 @@ static int count = 0;
         }
         if (self.currentWorkPositionStyle == KZWorkPositionSytleStand) {
             if (canSit == 0) {
+                count = 0;
                 [weakSelf sendSitNotification];
             }
         } else {
             if (canStand == 0) {
+                count = 0;
                 [weakSelf sendStandNotification];
             }
         }
