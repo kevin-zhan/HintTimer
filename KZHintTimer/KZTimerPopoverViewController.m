@@ -15,6 +15,7 @@ typedef NS_ENUM(NSInteger, KZWorkPositionSytle) {
 @interface KZTimerPopoverViewController () <NSUserNotificationCenterDelegate,NSTextFieldDelegate>
 @property (weak) IBOutlet NSTextField *standTimeDurationTextField;
 @property (weak) IBOutlet NSTextField *sitTimeDurationTextField;
+@property (weak) IBOutlet NSTextField *timeRemainLabel;
 @property (weak) IBOutlet NSTextField *currentCount;
 @property (strong, nonatomic) NSTimer *theOnlyTimer;
 @property (assign, nonatomic) NSInteger standTime;
@@ -51,7 +52,7 @@ static int count = 0;
 
 //启动timer
 - (void)universalBeginTimer {
-    count = 0;
+    count = 1;
     [self.theOnlyTimer invalidate];
     __weak typeof (self) weakSelf = self;
     self.theOnlyTimer = [NSTimer scheduledTimerWithTimeInterval:1*60 repeats:YES block:^(NSTimer * _Nonnull timer) {
@@ -59,8 +60,10 @@ static int count = 0;
         int canSit = count % self.standTime;
         int canStand = count % self.sitTime;
         if ((canSit != 0) && (canStand != 0)) {
+            self.timeRemainLabel.stringValue = [NSString stringWithFormat:@"坚持%ld分钟了~",count];
             return;
         }
+        
         if (self.currentWorkPositionStyle == KZWorkPositionSytleStand) {
             if (canSit == 0) {
                 count = 0;
@@ -97,7 +100,7 @@ static int count = 0;
 
 
 - (void) sendNotificationWithTitle:(NSString *)title Information:(NSString *)infomation {
-    
+    self.timeRemainLabel.stringValue = @"开始计时啦！";
     self.currentCount.stringValue = [NSString stringWithFormat:@"当前状态:%@",self.currentWorkPositionStyle == KZWorkPositionSytleStand?@"站着":@"坐着"];
     
     NSUserNotification *localNotify = [[NSUserNotification alloc] init];
